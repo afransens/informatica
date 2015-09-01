@@ -1,3 +1,3 @@
 # informatica
 Repository for informatics
-hoi
+hoi verdomme
