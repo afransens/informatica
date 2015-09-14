@@ -12,17 +12,16 @@ $db = new mysqli($host, $user, $password, $database);
 $order = $_GET["order"];
 $scending = $_GET["scending"];
 
-if ($scending == 0 ){
+if ($scending == null ){
 	$scending = "ASC";
 }
 
-if ($order == 0 ){
+if ($order == null ){
 	$order = "Titel";
 }
 
 
 $sql = "SELECT * FROM `king_khan` ORDER BY `king_khan`. $order $scending";
-
 
 
 if(!$result = $db->query($sql)){
