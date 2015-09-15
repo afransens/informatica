@@ -11,6 +11,7 @@ $db = new mysqli($host, $user, $password, $database);
 
 $order = $_GET["order"];
 $scending = $_GET["scending"];
+$category = $_GET["category"];
 $search = $_GET["search"];
 
 if ($scending == null ){
@@ -20,11 +21,14 @@ if ($scending == null ){
 if ($order == null ){
 	$order = "Titel";
 }
+if ($category == null ){
+	$category = "Titel";
+}
 
 
 
 if ($search != null ){
-	$sql = "SELECT * FROM `king_khan` WHERE `Titel` LIKE '%$search%' ORDER BY `king_khan`. $order $scending";
+	$sql = "SELECT * FROM `king_khan` WHERE `$category` LIKE '%$search%' ORDER BY `king_khan`. $order $scending";
 }
 
 
@@ -57,6 +61,12 @@ if(!$result = $db->query($sql)){
   Suchen bitte:<br>
   <input type="text" name="search">
   <br>
+<select name="category">
+  <option value="Titel">Titel</option>
+  <option value="Artiest">Artiest</option>
+  <option value="Soort">Soort</option>
+  <option value="Formaat">Formaat</option>
+</select>
   <input type="submit" value="Suchen">
 </form> 
 
