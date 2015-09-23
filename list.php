@@ -44,7 +44,7 @@ if(!$result = $db->query($sql)){
   				echo '<tr> <td>' . $row['Titel'] . '</td>';
    				echo '<td>' . $row['Artiest'] . '</td>';
  				echo '<td>' . $row['Soort'] . '</td>';
- 				echo '<td>' . $row['Formaat'] . '</td> </tr>'; } 
+ 				echo '<td>' . $row['Formaat'] . '</td>'; 
 				echo '<td><img src=' . $row['Afbeelding'] . '/></td> </tr>'; } 
   			?>
 		</table>
