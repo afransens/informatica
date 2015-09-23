@@ -1,6 +1,6 @@
 <?php
 
-include include_mysql_setup.php;
+include "include_mysql_setup.php";
 
 
 if ($search != null ){

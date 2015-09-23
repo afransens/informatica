@@ -1,6 +1,6 @@
 <?php
 
-include include_mysql_setup.php;
+include "include_mysql_setup.php";
 
 $sql = "SELECT * FROM `king_khan` ORDER BY `king_khan`. $order $scending";
 
