@@ -1,25 +1,6 @@
 <?php
-//Setup connection
-$host = "localhost";
-$user = "informatica";
-$password = "informatica";
-$database = "informatica";
 
-$db = new mysqli($host, $user, $password, $database);
-
-
-
-$order = $_GET["order"];
-$scending = $_GET["scending"];
-
-if ($scending == null ){
-	$scending = "ASC";
-}
-
-if ($order == null ){
-	$order = "Titel";
-}
-
+include include_mysql_setup.php;
 
 $sql = "SELECT * FROM `king_khan` ORDER BY `king_khan`. $order $scending";
 
@@ -45,7 +26,7 @@ if(!$result = $db->query($sql)){
    				echo '<td>' . $row['Artiest'] . '</td>';
  				echo '<td>' . $row['Soort'] . '</td>';
  				echo '<td>' . $row['Formaat'] . '</td>'; 
-				echo '<td><img src="' . $row['Afbeelding'] . '" alt="' . $row['Titel'] . '" height="64" width="64"/></td></tr>'; } 
+				echo '<td><img src="' . $row['Afbeelding'] . '" alt="' . $row['Titel'] . '" height="128" width="128"/></td></tr>'; } 
   			?>
 		</table>
 	</body>
